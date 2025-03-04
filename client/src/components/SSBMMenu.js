@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const menuOptions = [
-  "Projects / Works",
-  "Tech-Stack",
-  "TL;DR",
-  "Get in Touch",
+  "Projects",
+  "Technologies",
+  "About Me",
+  "Settings",
 ];
 
 export default function SSBMMenu() {
@@ -45,22 +45,25 @@ export default function SSBMMenu() {
 
       {/* ✅ Menu UI */}
       <div className="flex justify-center items-center h-screen text-white relative">
-        <div className="relative w-[500px] h-[400px] flex flex-col items-center space-y-4">
-          {menuOptions.map((option, index) => (
-            <motion.div
-              key={option}
-              initial={{ opacity: 0.8, scale: 1 }}
-              animate={{
-                scale: selectedIndex === index ? 1.1 : 1,
-                opacity: selectedIndex === index ? 1 : 0.7,
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className={`ssbm-button ${selectedIndex === index ? "selected" : ""}`}
-            >
-              <span>{option}</span>
-            </motion.div>
-          ))}
-        </div>
+      <div className="relative w-[500px] h-[300px] flex flex-col items-center gap-4">
+  {menuOptions.map((option, index) => (
+    <motion.div
+    key={option}
+    initial={{ opacity: 0.8, scale: 1 }}
+    animate={{
+      scale: selectedIndex === index ? 1.2 : 1,
+      opacity: selectedIndex === index ? 1 : 0.8,
+    }}
+    transition={{
+      duration: 0.08, // Near instant speed
+      ease: "easeOut", // Fast snappy exit
+    }}
+    className={`ssbm-button ${selectedIndex === index ? "selected" : ""}`}
+  >
+    <span>{option}</span>
+  </motion.div>
+  ))}
+</div>
       </div>
     </div>
   );

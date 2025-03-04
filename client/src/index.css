@@ -27,14 +27,15 @@
 
 /* ✅ Default State (No Glow, Just Base Shape) */
 .ssbm-button {
-  background: rgba(249, 201, 11, 0.058); /* Light transparent black */
-  backdrop-filter: blur(5px); /* Blurs background behind button */
-  color: rgb(255, 204, 0);
+  background: rgba(249, 201, 11, 0.058);
+  backdrop-filter: blur(5px);
+  color: rgb(255, 225, 0);
   border: 7px solid;
   width: 320px;
   height: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 0; /* 🚀 No need for margin, Flexbox handles spacing */
 }
+
 
 
 /* ✅ Staggered Positioning (Correctly Moves Buttons) */
@@ -66,7 +67,7 @@
 
 /* ✅ Highlighted Button (Minimal Glow & Proper Border) */
 .ssbm-button.selected {
-  background: rgb(255, 204, 0);
+  background: rgba(255, 204, 0, 0.814);
   color: black;
   border: 4px solid #ffcc00;
   box-shadow: 0px 0px 12px rgba(255, 255, 0, .5); /* 🔥 NEW, properly contained glow */
