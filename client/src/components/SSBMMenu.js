@@ -27,27 +27,41 @@ export default function SSBMMenu() {
   }, [selectedIndex]);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-black text-white relative">
-      <div className="relative w-[500px] h-[400px] flex flex-col items-center space-y-4">
-        {menuOptions.map((option, index) => (
-         <motion.div
-         key={option}
-         initial={{ opacity: 0.8, scale: 1 }}
-         animate={{
-           scale: selectedIndex === index ? 1.05 : 1,
-           opacity: selectedIndex === index ? 1 : 0.7,
-         }}
-         transition={{ type: "spring", stiffness: 250, damping: 20 }}
-         className={`relative flex items-center justify-center w-[320px] h-[60px] 
-                     text-lg font-bold tracking-wider transition-all ssbm-button 
-                     ${selectedIndex === index ? "selected" : ""}`}
-       >
-         <span>{option}</span>
-       </motion.div>
-       
-        ))}
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* ✅ Background Video */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+      >
+        <source src="/videos/MainMenuLoop.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* ✅ Optional Blur Overlay for Readability */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/20 video-overlay z-[-1]"></div>
+
+      {/* ✅ Menu UI */}
+      <div className="flex justify-center items-center h-screen text-white relative">
+        <div className="relative w-[500px] h-[400px] flex flex-col items-center space-y-4">
+          {menuOptions.map((option, index) => (
+            <motion.div
+              key={option}
+              initial={{ opacity: 0.8, scale: 1 }}
+              animate={{
+                scale: selectedIndex === index ? 1.1 : 1,
+                opacity: selectedIndex === index ? 1 : 0.7,
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              className={`ssbm-button ${selectedIndex === index ? "selected" : ""}`}
+            >
+              <span>{option}</span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
