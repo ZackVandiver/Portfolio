@@ -31,8 +31,9 @@
   backdrop-filter: blur(5px);
   color: rgb(255, 225, 0);
   border: 7px solid;
-  width: 320px;
-  height: 60px;
+  width: 400px;      /* increased from 320px */
+  height: 80px;      /* increased from 60px */
+  font-size: 24px;   /* bump up the text a bit */
   margin-bottom: 0; /* 🚀 No need for margin, Flexbox handles spacing */
 }
 
@@ -42,20 +43,20 @@
 /* ✅ Mirrored Staggered Positioning (Moves Buttons Left) */
 .ssbm-button:nth-child(1) {
   position: relative;
-  left: -20px;
+  left: -40px;
   
 }
 .ssbm-button:nth-child(2) {
   position: relative;
-  left: -40px;
+  left: -80px;
 }
 .ssbm-button:nth-child(3) {
   position: relative;
-  left: -50px;
+  left: -100px;
 }
 .ssbm-button:nth-child(4) {
   position: relative;
-  left: -30px;
+  left: -60px;
 }
 
 
@@ -76,3 +77,5 @@
 .video-overlay {
   backdrop-filter: blur(1.4px); /* 🔥 Adjust this for a tiny blur */
 }
+
+
